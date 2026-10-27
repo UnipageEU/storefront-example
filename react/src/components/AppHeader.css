@@ -1,0 +1,72 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky-nav);
+  height: var(--header-h);
+  background: var(--color-paper);
+  border-bottom: var(--rule-hair) solid var(--color-rule);
+}
+
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-width: 0;
+  min-height: 44px;
+  color: var(--color-ink);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border-radius: var(--r-sm);
+  object-fit: cover;
+}
+
+.brand-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--text-xl);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex: none;
+}
+
+.header-back {
+  padding: 0 var(--space-sm) 0 var(--space-xs);
+}
+
+/* back to the style chooser: quiet, it is not part of the shop itself */
+.header-style {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--color-rule-strong);
+  white-space: nowrap;
+}
+
+.header-style:hover {
+  color: var(--color-ink);
+  text-decoration-color: var(--color-accent);
+}

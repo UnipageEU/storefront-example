@@ -1,0 +1,287 @@
+.cf {
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-3xl);
+}
+
+.cf-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-bottom: var(--space-lg);
+  border-bottom: var(--rule-hair) solid var(--color-ink);
+}
+
+.cf-sub {
+  font-size: var(--text-lg);
+  color: var(--color-ink-2);
+}
+
+/* the order number is the thing you read out at the counter */
+.cf-id {
+  display: block;
+  margin-top: var(--space-2xs);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 1.5rem + 3.6vw, 4rem);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--tracking-display);
+  line-height: 1;
+  color: var(--color-ink);
+}
+
+.cf-title {
+  font-size: var(--text-3xl);
+  max-width: 30ch;
+}
+
+.cf-title.failed {
+  color: var(--color-error);
+}
+
+.cf-mail {
+  font-size: var(--text-md);
+}
+
+.cf-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-2xl);
+  padding-top: var(--space-xl);
+}
+
+@media (min-width: 60rem) {
+  .cf-grid {
+    grid-template-columns: minmax(0, 1fr) 420px;
+    align-items: start;
+  }
+  .cf-receipt {
+    position: sticky;
+    top: calc(var(--header-h) + var(--space-lg));
+  }
+}
+
+.cf-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  min-width: 0;
+  max-width: 640px;
+}
+
+.cf-status {
+  min-height: 44px;
+}
+
+.cf-label {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--accent-ink);
+}
+
+.cf-label.failed {
+  color: var(--color-error);
+}
+
+.cf-live {
+  margin-top: var(--space-2xs);
+  font-size: var(--text-sm);
+}
+
+/* the status as a ruled sequence: done in ink, the current step in the restaurant's colour */
+.cf-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: var(--rule-hair) solid var(--color-ink);
+}
+
+.cf-step {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+  padding: var(--space-md) 0;
+  border-bottom: var(--rule-hair) solid var(--color-rule);
+}
+
+.cf-step-mark {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  border-radius: 50%;
+  border: var(--rule-hair) solid var(--color-rule-strong);
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.cf-step.done .cf-step-mark {
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.cf-step.current .cf-step-mark {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.cf-step-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  padding-top: var(--space-2xs);
+}
+
+.cf-step-text strong {
+  font-weight: 600;
+}
+
+.cf-step-text .muted {
+  font-size: var(--text-sm);
+}
+
+.cf-step:not(.done):not(.current) strong {
+  color: var(--color-muted);
+}
+
+.cf-step.current strong {
+  color: var(--accent-ink);
+}
+
+.cf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+/* the receipt: the one well */
+.cf-receipt {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--color-paper-2);
+  border: var(--rule-hair) solid var(--color-rule);
+  border-radius: var(--radius-card);
+}
+
+.cf-type {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--display-weight);
+  letter-spacing: -0.02em;
+}
+
+.cf-facts {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border-top: var(--rule-hair) solid var(--color-ink);
+}
+
+.cf-facts:empty {
+  display: none;
+}
+
+.cf-facts > div {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+  border-bottom: var(--rule-hair) solid var(--color-rule);
+}
+
+.cf-facts dt {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+.cf-facts dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.cf-lines {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.cf-lines li {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.cf-lines small {
+  display: block;
+  font-size: var(--text-sm);
+}
+
+.cf-line-name {
+  flex: 1 1 auto;
+}
+
+.cf-line-total {
+  flex: none;
+  font-weight: 600;
+}
+
+.cf-q {
+  font-weight: 700;
+  min-width: 2em;
+}
+
+.cf-totals {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.cf-totals > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.cf-totals dt {
+  color: var(--color-ink-2);
+}
+
+.cf-totals dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.cf-totals .discount dt,
+.cf-totals .discount dd {
+  color: var(--color-success);
+}
+
+.cf-totals .total {
+  margin-top: var(--space-2xs);
+  padding-top: var(--space-sm);
+  border-top: var(--rule-hair) solid var(--color-ink);
+  font-size: var(--text-xl);
+}
+
+.cf-totals .total dt,
+.cf-totals .total dd {
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+@media (max-width: 40rem) {
+  .cf {
+    padding-top: var(--space-xl);
+  }
+  .cf-receipt {
+    padding: var(--space-md);
+  }
+}

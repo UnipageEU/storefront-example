@@ -1,0 +1,49 @@
+/* a segmented control: the chosen way in ink, the other on a hairline */
+.ott {
+  display: inline-flex;
+  border: var(--rule-hair) solid var(--color-rule-strong);
+  border-radius: var(--radius-input);
+  background: var(--color-paper);
+  overflow: clip;
+}
+
+.ott-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-height: 44px;
+  padding: 0 var(--space-md);
+  border: 0;
+  background: transparent;
+  color: var(--color-ink-2);
+  font-weight: 600;
+  font-size: var(--text-md);
+  transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
+}
+
+.ott-btn + .ott-btn {
+  border-left: var(--rule-hair) solid var(--color-rule-strong);
+}
+
+.ott-btn:hover {
+  background: var(--color-paper-2);
+  color: var(--color-ink);
+}
+
+.ott-btn:focus-visible {
+  outline-offset: -3px;
+}
+
+.ott-btn[aria-checked='true'] {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.ott-single {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-height: 44px;
+  font-weight: 600;
+  font-size: var(--text-md);
+}

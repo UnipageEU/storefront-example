@@ -1,0 +1,28 @@
+.boot {
+  padding-top: var(--space-2xl);
+}
+
+.boot-error {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+
+.boot-error-card {
+  max-width: 560px;
+  padding-top: var(--space-lg);
+  border-top: var(--rule-hair) solid var(--color-ink);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.boot-error-card h1 {
+  font-size: var(--text-4xl);
+  text-wrap: balance;
+  line-height: 1.05;
+}
+
+.boot-error-card .btn {
+  margin-top: var(--space-xs);
+}

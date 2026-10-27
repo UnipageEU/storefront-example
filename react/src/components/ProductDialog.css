@@ -1,0 +1,126 @@
+.pd-close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  z-index: var(--z-raised);
+}
+
+.pd-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.pd-media {
+  aspect-ratio: 16 / 9;
+  background: var(--color-paper-2);
+  border-bottom: var(--rule-hair) solid var(--color-rule);
+}
+
+.pd-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.65) contrast(0.97);
+}
+
+.pd-content {
+  padding: var(--space-lg);
+}
+
+.pd-title {
+  padding-right: var(--space-2xl);
+  font-size: var(--text-4xl);
+  line-height: 1.05;
+}
+
+.pd-price {
+  margin-top: var(--space-xs);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.pd-desc {
+  margin-top: var(--space-sm);
+  color: var(--color-ink-2);
+}
+
+.pd-allergens {
+  display: flex;
+  gap: var(--space-xs);
+  align-items: flex-start;
+  margin-top: var(--space-sm);
+  font-size: var(--text-sm);
+  color: var(--color-ink-2);
+}
+
+.pd-allergens svg {
+  flex: none;
+  margin-top: var(--space-3xs);
+}
+
+.pd-banner {
+  margin-top: var(--space-md);
+}
+
+.pd-groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.pd-notes {
+  margin-top: var(--space-xl);
+}
+
+.pd-foot {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+  padding: var(--space-md) var(--space-lg) calc(var(--space-md) + env(safe-area-inset-bottom));
+  border-top: var(--rule-hair) solid var(--color-rule);
+  background: var(--color-paper);
+}
+
+.pd-add {
+  flex: 1;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.pd-add span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pd-foot-error {
+  margin: 0 var(--space-lg) var(--space-sm);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-error);
+  text-align: right;
+}
+
+.banner-action {
+  margin-top: var(--space-sm);
+}
+
+@media (max-width: 40rem) {
+  .pd-content {
+    padding: var(--space-lg) var(--space-md);
+  }
+  .pd-foot {
+    padding-inline: var(--space-md);
+    gap: var(--space-xs);
+  }
+  .pd-foot .stepper-btn {
+    width: 36px;
+  }
+  .pd-add {
+    padding: 0 var(--space-md);
+    gap: var(--space-sm);
+  }
+}

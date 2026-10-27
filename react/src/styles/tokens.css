@@ -1,0 +1,67 @@
+/* The shared tokens. The classic look and the chooser read them directly; the
+ * editorial and diner looks remap them under `.ed` and `.dn`.
+ * The accent is the restaurant's: format.js accentTokens() writes --accent* on
+ * <html> from store.branding.primaryColor. */
+:root {
+  color-scheme: light;
+
+  /* the shared scale */
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.75rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.125rem; --text-xl: 1.266rem; --text-2xl: 1.424rem; --text-3xl: 1.602rem; --text-4xl: 2.027rem; --text-5xl: 2.887rem;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --container: 1360px; --gutter: 40px; --gap-columns: 32px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+
+  /* Ink: white paper, a black with no hue, hairlines */
+  --color-paper: oklch(99.5% 0.003 100); --color-paper-2: oklch(97% 0.004 100); --color-paper-3: oklch(94% 0.006 100);
+  --color-ink: oklch(16% 0.005 100); --color-ink-2: oklch(28% 0.005 100); --color-muted: oklch(44% 0.005 100);
+  --color-rule: oklch(89% 0.004 100); --color-rule-2: oklch(93.5% 0.003 100); --color-rule-strong: oklch(72% 0.004 100);
+  --color-error: oklch(50% 0.19 27); --color-error-soft: oklch(96% 0.025 27);
+  --color-success: oklch(48% 0.12 150); --color-success-soft: oklch(96% 0.03 150);
+  --color-warning: oklch(50% 0.11 70); --color-warning-soft: oklch(96% 0.04 85);
+  --color-scrim: oklch(16% 0.005 100 / 0.42);
+
+  /* the restaurant's colour, as a signal: the primary action, the current choice, the focus ring */
+  --accent: oklch(52% 0.17 35); --accent-contrast: oklch(99.5% 0.003 100); --accent-ink: oklch(44% 0.15 35);
+  --accent-hover: oklch(46% 0.16 35); --accent-soft: oklch(94% 0.03 35); --accent-softer: oklch(97% 0.015 35); --accent-ring: oklch(52% 0.17 35 / 0.35);
+  --color-accent: var(--accent); --color-accent-ink: var(--accent-contrast); --color-accent-soft: var(--accent-soft); --color-accent-soft-ink: var(--accent-ink);
+  --color-focus: var(--accent-ink);
+
+  /* the editorial look's values, for the chooser's miniature (the look itself remaps under .ed) */
+  --half-paper: oklch(96.2% 0.032 94); --half-slip: oklch(98.6% 0.018 94); --half-ink: oklch(23% 0.04 38); --half-muted: oklch(44% 0.048 44); --half-rule: oklch(82% 0.042 82);
+  --half-display: 'Ultra', ui-serif, Georgia, serif; --half-sans: 'Chivo', ui-sans-serif, system-ui, sans-serif;
+
+  /* the diner, for the chooser's miniature of the diner look (the look itself declares its own in diner.css) */
+  --diner-ground: oklch(95.5% 0.018 175); --diner-card: oklch(98.9% 0.007 90); --diner-ink: oklch(26% 0.05 255); --diner-muted: oklch(45% 0.035 250);
+  --diner-dots: oklch(64% 0.03 240); --diner-check: oklch(95% 0.035 150); --diner-check-rule: oklch(72% 0.07 150);
+  --diner-display: 'Antonio', 'Arial Narrow', ui-sans-serif, sans-serif; --diner-body: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+
+  --font-display: 'Epilogue', ui-sans-serif, system-ui, sans-serif; --font-body: var(--font-display);
+  --radius-card: 12px; --radius-input: 10px; --radius-pill: 999px; --rule-hair: 1px;
+  --shadow-card: 0 20px 40px oklch(20% 0.005 100 / 0.16);
+  --tracking-display: -0.04em; --display-weight: 700;
+
+  /* shell measures */
+  --header-h: 64px; --catnav-h: 52px; --cart-w: 380px;
+
+  /* the project's older names, kept so every component reads one system */
+  --bg: var(--color-paper); --surface: var(--color-paper); --surface-2: var(--color-paper-2); --surface-3: var(--color-paper-3);
+  --line: var(--color-rule); --line-strong: var(--color-rule-strong);
+  --text: var(--color-ink); --text-2: var(--color-ink-2); --text-3: var(--color-muted);
+  --success: var(--color-success); --success-soft: var(--color-success-soft); --danger: var(--color-error); --danger-soft: var(--color-error-soft); --warning: var(--color-warning); --warning-soft: var(--color-warning-soft);
+  --font: var(--font-body);
+  --fs-xs: var(--text-xs); --fs-sm: var(--text-sm); --fs-md: var(--text-md); --fs-lg: var(--text-lg); --fs-xl: var(--text-xl); --fs-2xl: var(--text-3xl); --fs-3xl: var(--text-5xl);
+  --r-sm: 6px; --r-md: var(--radius-input); --r-lg: var(--radius-card); --r-xl: var(--radius-card); --r-pill: var(--radius-pill);
+  --sh-1: none; --sh-2: none; --sh-3: var(--shadow-card);
+  --ease: var(--ease-out);
+  --maxw: var(--container);
+}
+
+@media (max-width: 60rem) {
+  :root { --gutter: 24px; }
+}
+
+@media (max-width: 40rem) {
+  :root { --gutter: 16px; --gap-columns: 16px; }
+}

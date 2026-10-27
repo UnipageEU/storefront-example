@@ -1,0 +1,53 @@
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  border: var(--rule-hair) solid var(--color-rule-strong);
+  border-radius: var(--radius-input);
+  background: var(--color-paper);
+}
+
+.stepper-btn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: var(--radius-input);
+  background: transparent;
+  color: var(--color-ink);
+  transition: background-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out);
+}
+
+.stepper-btn:hover:not(:disabled) {
+  background: var(--color-paper-2);
+}
+
+.stepper-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.stepper-btn:focus-visible {
+  outline-offset: -2px;
+}
+
+.stepper-btn:disabled {
+  color: var(--color-muted);
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.stepper-value {
+  min-width: 28px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.stepper-sm .stepper-btn {
+  width: 32px;
+  height: 32px;
+}
+
+.stepper-sm .stepper-value {
+  min-width: 24px;
+  font-size: var(--text-sm);
+}

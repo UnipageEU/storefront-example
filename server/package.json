@@ -1,0 +1,16 @@
+{
+  "name": "storefront-example-server",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Order relay for the Unipage Storefront API example: holds the secret key, places orders and reads them back.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/index.js",
+    "dev": "node --env-file-if-exists=.env --watch src/index.js",
+    "test": "node --test \"test/**/*.test.js\""
+  }
+}

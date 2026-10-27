@@ -1,0 +1,98 @@
+.modal-root {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--color-scrim);
+}
+
+.modal-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 92dvh;
+  background: var(--color-paper);
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
+  box-shadow: var(--shadow-card);
+  overflow: clip;
+  outline: none;
+}
+
+@media (min-width: 45rem) {
+  .modal-center {
+    align-items: center;
+    padding: var(--space-lg);
+  }
+  .modal-center .modal-panel {
+    max-width: 560px;
+    max-height: min(860px, 90dvh);
+    border-radius: var(--radius-card);
+  }
+  .modal-drawer {
+    justify-content: flex-end;
+    align-items: stretch;
+  }
+  .modal-drawer .modal-panel {
+    max-width: 420px;
+    max-height: none;
+    height: 100%;
+    border-radius: 0;
+    border-left: var(--rule-hair) solid var(--color-rule);
+  }
+}
+
+/* a fixed size: the panel's height is set before its content loads, so the
+   product dialogs never grow when their option groups arrive */
+.modal-fixed .modal-panel {
+  height: 92dvh;
+}
+
+@media (min-width: 45rem) {
+  .modal-center.modal-fixed .modal-panel {
+    height: min(760px, 90dvh);
+  }
+}
+
+/* enter animation (the dialog unmounts at once on close) */
+.modal-root {
+  animation: modal-fade var(--dur-short) var(--ease-out);
+}
+.modal-panel {
+  animation: modal-rise var(--dur-long) var(--ease-out);
+}
+@media (min-width: 45rem) {
+  .modal-center .modal-panel {
+    animation-name: modal-pop;
+  }
+  .modal-drawer .modal-panel {
+    animation-name: modal-slide;
+  }
+}
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes modal-rise {
+  from {
+    transform: translateY(40px);
+  }
+}
+@keyframes modal-pop {
+  from {
+    transform: translateY(12px);
+  }
+}
+@keyframes modal-slide {
+  from {
+    transform: translateX(40px);
+  }
+}
